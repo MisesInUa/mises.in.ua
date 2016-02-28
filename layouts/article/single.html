@@ -1,0 +1,38 @@
+{{ partial "head.html" . }}
+{{ partial "nav.html" . }}
+
+<main>
+  <header>
+    <div class="row">
+      <div class="col-md-9 col-sm-12">
+        {{ printf "%s"  $.Params.author }}
+        <h1>{{ .Title }}</h1>
+      </div>
+
+      <div class="col-md-3 col-sm-12">
+        <h3>
+          <small>{{ .Date.Format "02.01.2006" }}</small>
+        </h3>
+      </div>
+    <div class="row">
+  </header>
+
+  <br>
+
+  <article>
+    {{ .Content }}
+  </article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+  <a href=" {{ .Site.BaseURL }}" class="btn btn-default">
+    <i class="fa fa-home"></i>
+    Главная
+  </a>
+</div>
+
+{{ if .Site.DisqusShortname }}
+  {{ template "_internal/disqus.html" . }}
+{{ end }}
+
+{{ partial "footer.html" . }}

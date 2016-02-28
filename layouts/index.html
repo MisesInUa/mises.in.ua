@@ -1,0 +1,13 @@
+{{ partial "head.html" . }}
+{{ partial "nav.html" . }}
+
+{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Section" "article") }}
+  {{ range $paginator.Pages }}
+    {{ .Render "summary" }}
+  {{ end }}
+
+<div class="text-center center-block">
+ {{ template "_internal/pagination.html" . }}
+</div>
+
+{{ partial "footer.html" . }}
