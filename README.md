@@ -53,3 +53,10 @@ hugo server --theme=hugo-geo --buildDrafts
 
 Check result at http://localhost:1313/
 
+Create new brunch, push to github and open pull request. 
+
+Deploy to mises.in.ua
+
+```bash
+cap production deploy
+```
